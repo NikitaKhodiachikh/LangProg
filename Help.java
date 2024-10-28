@@ -1,12 +1,21 @@
 class Help{
 	public static void main(String[] args)
 		throws java.io.IOException {
-		char choice;
-		System.out.println("Справочная система по операторам: ");
-		System.out.println("  1.  if");
-		System.out.println("  2.  switch");
-		System.out.println("Выберите номер раздела: ");
-		choice = (char) System.in.read();
+		char choice, ignore;
+		do{
+			System.out.println("Справочная система по операторам: ");
+			System.out.println("  1.  if");
+			System.out.println("  2.  switch");
+			System.out.println("  3.  for");
+			System.out.println("  4.  while");
+			System.out.println("  5.  do while");
+			System.out.println("Выберите номер раздела: ");
+			choice = (char) System.in.read();
+			do {
+				ignore = (char) System.in.read();
+			} while (ignore != '\n');
+		} while (choice < '1' | choice > '5');
+
 		
 		System.out.println("\n");
 		switch (choice){
@@ -24,10 +33,23 @@ class Help{
 				System.out.println("  //'....'");
 				System.out.println("}");
 				break;
-			default:
-				System.out.println("Неправильно указан номер раздела");
+			case '3':
+				System.out.println("Оператор цикла for: \n");
+                                System.out.println("for (инициализация; условие; итерационное действие)");
+                                System.out.println("  оператор; или {блок операторов}");
+                                break;
+			case '4':
+				System.out.println("Оператор цикла while: \n");
+                                System.out.println("while (условие) {операторы}");
+                                break;
+			case '5':
+				System.out.println("Оператор do while: \n");
+                                System.out.println("do {");
+                                System.out.println("операторы");
+				System.out.println("} while (условие);");
+                                break;
 		}
-	
+			
 	}	
 }
 
