@@ -1,7 +1,18 @@
 class Cars{
 	int pass; //количество пассажиров
 	int volume; //объем топ.бака
-	double fuel; //расход топлива на 100 км
+	double fuel; //расход топлива на 100 
+        
+	void range(){
+		System.out.println("расстояние на полном баке: " + (volume / fuel * 100)); 
+	}
+	double range2(){
+		return volume / fuel * 100;
+	}
+	double range3(int x){
+                return x / fuel * 100;
+        }
+
 	
 }
 
@@ -22,12 +33,16 @@ class pr003{
 		System.out.println("Параметры Хонды: ");
                 System.out.println("кол-во пассажиров: " + Honda.pass + "объем бака: " + Honda.volume + "расход на 100 км: " + Honda.fuel);
 	
-		double range;
-		range = BMW.volume / BMW.fuel * 100;
-		System.out.println("БЭХА на полном баке проедет " + range + "км ");
+		//double range;
+		//range = BMW.volume / BMW.fuel * 100;
+		System.out.println("БЭХА проедет ");
+		BMW.range();
+		System.out.println("BMW: " + BMW.range2());
 
-		range = Honda.volume / Honda.fuel * 100;
-		System.out.println("Хонда на полном баке проедет " + range + "км ");
+		//range = Honda.volume / Honda.fuel * 100;
+		System.out.println("Хонда проедет ");
+		Honda.range();
+		System.out.println("Honda: " + Honda.range3(15));
 	}
 
 }
