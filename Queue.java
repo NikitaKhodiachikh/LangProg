@@ -1,6 +1,6 @@
 class Queue{
-	char[] q;
-	int putloc, getloc; //указатели на индекс помещение и извлечение символов
+	private char[] q;
+	private int putloc, getloc; //указатели на индекс помещение и извлечение символов
 	Queue(int size){
 		q = new char[size]; //выделяем память под очередь нужного размера
 		putloc = getloc = 0;
@@ -53,8 +53,12 @@ class QDemo{
 		for (i = 0; i < 5; i++){
                         ch = smallQ.get();
                         if (ch != (char)0)
-                                System.out.print(ch);
-                }
+                               System.out.print(ch);
+       	        }
+		System.out.println();
+		//попытка доступа к закрытым переменным класса Queue
+		//bigQ.q[3] = 343;
+		//bigQ.putloc = 3
 
 	}
 }
