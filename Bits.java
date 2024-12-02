@@ -1,30 +1,43 @@
 import java.util.Random;
-class ShowBits {
-	int numbits;
-	ShowBits(int n) {
+class Bits{
+	public static void main(String[] args){
+	class ShowBits {
+		int numbits;
+		ShowBits(int n) {
 		numbits=n;
-	}
+		}
 
-	void show(long val) {
-		long mask = 1;
-		//Сдвиг влево значение 1
-		mask <<= numbits -1;
-		int spacer = 0;
-		for(; mask != 0; mask>>>=1) {
-			if ((val&mask) !=0) System.out.print("1");
-			else System.out.print("0");
-			spacer++;
-			if ((spacer%8) ==0 ) {
-				System.out.print(" ");
-				spacer = 0;
+		void show(long val) {
+			long mask = 1;
+			//Сдвиг влево значение 1
+			mask <<= numbits -1;
+			int spacer = 0;
+			for(; mask != 0; mask>>>=1) {
+				if ((val&mask) !=0) System.out.print("1");
+				else System.out.print("0");
+				spacer++;
+				if ((spacer%8) ==0 ) {
+					System.out.print(" ");
+					spacer = 0;
+				}
+			}	
+			System.out.println();
 			}
+		}
+		for(byte b = -128; b <= 127; b++){
+			ShowBits byteval = new ShowBits(8);
+			System.out.print(b + " в двоичном виде: ");
+			byteval.show(b);
+			if(b == 127)
+				break;
+
 		}	
-		System.out.println();
+
 	}
 
 }
-
-class Bits{
+/*
+class Bits2{
         public static void main(String[] args){
                 //сброс 6-го бита - изменение регистра латиницы
 		char ch;
@@ -158,4 +171,4 @@ class Bits{
         }
 
 }
-
+*/
